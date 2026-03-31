@@ -34,25 +34,51 @@ Email Service: Gmail SMTP (using App Password);
 
 ⚠️ Do not expose your email credentials. Store them in environment variables (.env file).
 
-📂 Project Structure
 project/
 
-│── app/
+│── app/  
 
-│   ├── models.py
+│   ├── migrations/  
 
-│   ├── views.py
+│   ├── models.py  
 
-│   ├── urls.py
+│   ├── views.py 
 
-│── templates/
+│   ├── forms.py   
 
-│── static/
+│   ├── urls.py  
 
-│── db.sqlite3
+│   ├── admin.py  
+
+│
+│── project/     
+
+│   ├── settings.py 
+
+│   ├── urls.py   
+
+│   ├── asgi.py
+
+│   ├── wsgi.py
+
+│
+│── templates/               
+│
+│── static/                  
+│
+│── media/                   
+│
+│── db.sqlite3              
+|
+│── .gitignore 
+
+│── requirements.txt  
+
+│── README.md
+
+│── LICENSE
 
 │── manage.py
-
 
 ⚙️ Installation & Setup
 
@@ -93,6 +119,22 @@ Save students you like
 Send connection requests
 
 Manage incoming and sent requests
+
+🔄 CRUD Functionality
+
+The application fully supports CRUD (Create, Read, Update, Delete) operations for student data.
+
+Create: Add new students using forms
+
+Read: Browse and view student profiles
+
+Update: Edit student details
+
+Delete: Remove students from the system
+
+CRUD operations are enhanced with inline form actions, allowing users to perform actions like adding or saving students directly from the browse page without navigation.
+
+👉 These operations are integrated with Django Models and Forms for efficient data handling.
 
 📸 Screenshots (Optional)
 
