@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Saved Students</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-3">
+
+    <h4 class="text-center mb-3">Saved Students</h4>
+
+    {% for item in saved %}
+    <div class="card mb-2 p-2 shadow-sm">
+
+        <div class="row align-items-center">
+
+            <!-- SMALL IMAGE -->
+            <div class="col-2 text-center">
+                <img src="{{ item.student.image.url }}" 
+                     width="70" height="70"
+                     class="rounded-circle"
+                     style="object-fit: cover;">
+            </div>
+
+            <!-- DETAILS -->
+            <div class="col-7">
+                <b>{{ item.student.name }}</b><br>
+                <small>{{ item.student.branch }} | {{ item.student.email }}</small>
+            </div>
+
+            <!-- REMOVE BUTTON -->
+            <div class="col-3 text-end">
+                <a href="{% url 'remove_saved' item.id %}" 
+                   class="btn btn-sm btn-danger">
+                    Remove
+                </a>
+            </div>
+
+            <!-- SEND BUTTON -->
+            <div class="text-center mt-3">
+                <a href="{% url 'send_requests' item.student.id %}" class="btn btn-success btn-sm">
+                    Send Request
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    {% empty %}
+        <p class="text-center">No saved students</p>
+    {% endfor %}
+
+    <h5 class="text-center mb-3">
+    Saved Students: {{ count }}
+</h5>
+
+     <div class="text-center mt-3">
+        <a href="{% url 'logout' %}" class="btn btn-warning">
+            Logout
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
