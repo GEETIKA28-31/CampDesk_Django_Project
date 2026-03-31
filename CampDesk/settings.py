@@ -129,5 +129,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = '24b01a12i0@svecw.edu.in'
-EMAIL_HOST_PASSWORD = 'tyqf ercz fftv pevk'
+EMAIL_HOST_USER = 'your_email'
+EMAIL_HOST_PASSWORD = 'your_password'
